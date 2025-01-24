@@ -2,7 +2,7 @@
     <x-slot:heading>
         Job Page
     </x-slot:heading>
-    <h1>{{$job['title']}}</h1>
+    <h1 class="font-bold text-lg">{{$job['title']}}</h1>
     <p>{{$job['description']}}</p>
     <p>{{$job['wage']}}</p>
 </x-layout>
