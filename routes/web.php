@@ -8,7 +8,9 @@ Route::get('/', static function () {
 });
 
 Route::get('/jobs', static function () {
-    return view('jobs', ['jobs' => Job::all()]);
+    $Jobs = Job::with('employer')->simplePaginate(5);
+
+    return view('jobs', ['jobs' => $Jobs]);
 });
 
 Route::get('/job/{id}', static function ($id) {
