@@ -7,16 +7,30 @@ Route::get('/', static function () {
     return view('home');
 });
 
-Route::get('/jobs', static function () {
-    $Jobs = Job::with('employer')->simplePaginate(5);
+Route::get('/jobs/create', static function () {
+    return view('jobs.create');
+});
 
-    return view('jobs', ['jobs' => $Jobs]);
+Route::get('/jobs', static function () {
+    $Jobs = Job::with('employer')->latest()->paginate(5);
+
+    return view('jobs.index', ['jobs' => $Jobs]);
+});
+
+Route::post('/jobs', static function () {
+    Job::create([
+        'title'       => request('title'),
+        'salary'      => request('salary'),
+        'employer_id' => 1,
+    ]);
+
+    return redirect('/jobs');
 });
 
 Route::get('/job/{id}', static function ($id) {
     $job = Job::find($id);
 
-    return view('job', [
+    return view('jobs.show', [
         'job' => $job,
     ]);
 });
