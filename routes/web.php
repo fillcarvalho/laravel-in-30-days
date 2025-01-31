@@ -20,6 +20,11 @@ Route::get('/jobs', static function () {
 });
 
 Route::post('/jobs', static function () {
+    request()->validate([
+        'title'  => ['required', 'min:3'],
+        'salary' => ['required', 'numeric'],
+    ]);
+
     Job::create([
         'title'       => request('title'),
         'salary'      => request('salary'),
@@ -29,12 +34,47 @@ Route::post('/jobs', static function () {
     return redirect('/jobs');
 });
 
-Route::get('/job/{id}', static function ($id) {
+Route::get('/jobs/{id}', static function ($id) {
     $job = Job::find($id);
 
     return view('jobs.show', [
         'job' => $job,
     ]);
+});
+
+// Edit
+Route::get('/jobs/{id}/edit', static function ($id) {
+    $job = Job::find($id);
+
+    return view('jobs.edit', [
+        'job' => $job,
+    ]);
+});
+
+// Update
+Route::patch('/jobs/{id}', static function ($id) {
+    request()->validate([
+        'title'  => ['required', 'min:3'],
+        'salary' => ['required', 'numeric'],
+    ]);
+
+    $job = Job::findOrFail($id);
+
+    $job->update([
+        'title'  => request('title'),
+        'salary' => request('salary'),
+    ]);
+
+    return redirect('/jobs/'.$job->id);
+});
+
+// Destroy
+Route::delete('/jobs/{id}', static function ($id) {
+    $job = Job::findOrFail($id);
+
+    $job->delete();
+
+    return redirect('/jobs/');
 });
 
 Route::get('/about2', static function () {

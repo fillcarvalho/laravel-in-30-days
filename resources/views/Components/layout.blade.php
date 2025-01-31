@@ -169,7 +169,7 @@
 @if( isset($heading) )
     <header class="bg-white shadow-sm">
         <div class="mx-auto max-w-7xl px-4 py-6">
-            <h1 class="text-3xl font-bold tracking-tight text-white">{{$heading}}</h1>
+            <h1 class="text-3xl font-bold tracking-tight">{{$heading}}</h1>
         </div>
     </header>
 @endif
