@@ -1,4 +1,4 @@
-import defaultTheme from 'tailwindcss/defaultTheme';
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -8,13 +8,23 @@ export default {
         './resources/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
+        './node_modules/flowbite/**/*.js',
     ],
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'cyan': '#234956',
+                'dark-cyan': '#19353e',
+                'orange': '#ff5f00',
+                'dark-orange': '#e65600',
+                'yellow': '#faab13',
+            },
         },
     },
-    plugins: [],
-};
+    plugins: [
+        require('flowbite/plugin'),
+    ],
+}

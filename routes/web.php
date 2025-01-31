@@ -4,7 +4,9 @@ use App\Models\Job;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', static function () {
-    return view('home');
+    $states = config('app.states');
+
+    return view('home', ['states' => $states]);
 });
 
 Route::get('/jobs/create', static function () {

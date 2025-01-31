@@ -3,7 +3,7 @@
         Job Page
     </x-slot:heading>
     <h1 class="my-3">Hello from the About page</h1>
-    <a href="/jobs/create" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded">
+    <a href="/jobs/create" class="bg-primary hover:bg-indigo-500 text-white font-bold py-2 px-4 rounded">
         Create
     </a>
     <div class="space-y-4 mt-4">

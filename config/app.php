@@ -123,4 +123,69 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'states' => [
+        [
+            "name"   => "Acre",
+            "slug"   => "acre",
+            'cities' => [
+                ['name' => 'Rio Branco', 'slug' => 'rio-branco'],
+                ['name' => 'Cruzeiro do Sul', 'slug' => 'cruzeiro-do-sul'],
+                ['name' => 'Sena Madureira', 'slug' => 'sena-madureira'],
+                ['name' => 'Tarauacá', 'slug' => 'tarauaca'],
+                ['name' => 'Feijó', 'slug' => 'feijo'],
+                ['name' => 'Brasiléia', 'slug' => 'brasileia'],
+                ['name' => 'Plácido de Castro', 'slug' => 'placido-de-castro'],
+                ['name' => 'Xapuri', 'slug' => 'xapuri'],
+                ['name' => 'Senador Guiomard', 'slug' => 'senador-guiomard'],
+                ['name' => 'Mâncio Lima', 'slug' => 'mancio-lima'],
+            ],
+        ],
+
+        [
+            "name"   => "Alagoas",
+            "slug"   => "alagoas",
+            'cities' => [
+                ['name' => 'Maceió', 'slug' => 'maceio'],
+                ['name' => 'Arapiraca', 'slug' => 'arapiraca'],
+                [
+                    'name' => 'Palmeira dos Índios',
+                    'slug' => 'palmeira-dos-indios',
+                ],
+                ['name' => 'Rio Largo', 'slug' => 'rio-largo'],
+                ['name' => 'Penedo', 'slug' => 'penedo'],
+                [
+                    'name' => 'União dos Palmares',
+                    'slug' => 'uniao-dos-palmares',
+                ],
+                ['name' => 'Delmiro Gouveia', 'slug' => 'delmiro-gouveia'],
+                [
+                    'name' => 'Santana do Ipanema',
+                    'slug' => 'santana-do-ipanema',
+                ],
+                ['name' => 'Marechal Deodoro', 'slug' => 'marechal-deodoro'],
+                [
+                    'name' => 'São Miguel dos Campos',
+                    'slug' => 'sao-miguel-dos-campos',
+                ],
+            ],
+        ],
+
+        [
+            "name"   => "Amazonas",
+            "slug"   => "amazonas",
+            'cities' => [
+                ['name' => 'Manaus', 'slug' => 'manaus'],
+                ['name' => 'Parintins', 'slug' => 'parintins'],
+                ['name' => 'Itacoatiara', 'slug' => 'itacoatiara'],
+                ['name' => 'Manacapuru', 'slug' => 'manacapuru'],
+                ['name' => 'Coari', 'slug' => 'coari'],
+                ['name' => 'Tefé', 'slug' => 'tefe'],
+                ['name' => 'Tabatinga', 'slug' => 'tabatinga'],
+                ['name' => 'Maués', 'slug' => 'maues'],
+                ['name' => 'Iranduba', 'slug' => 'iranduba'],
+                ['name' => 'Humaitá', 'slug' => 'humaita'],
+            ],
+        ],
+    ],
+
 ];

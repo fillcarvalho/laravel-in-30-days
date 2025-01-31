@@ -1,2 +1,2 @@
 @props(['active' => false, 'type'])
-<a {{$attributes}} class="px-3 py-2 {{ $active ?  "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white" }}">{{$slot}}</a>
+<a {{$attributes}} class="block py-2 px-3 hover:underline {{ $active ?  "text-white bg-blue-700 rounded-sm md:bg-transparent md:p-0 md:dark:text-blue-500" : "text-white rounded-sm md:hover:bg-transparent md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" }}">{{$slot}}</a>
