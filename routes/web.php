@@ -34,31 +34,25 @@ Route::post('/jobs', static function () {
     return redirect('/jobs');
 });
 
-Route::get('/jobs/{id}', static function ($id) {
-    $job = Job::find($id);
-
+Route::get('/jobs/{job}', static function (Job $job) {
     return view('jobs.show', [
         'job' => $job,
     ]);
 });
 
 // Edit
-Route::get('/jobs/{id}/edit', static function ($id) {
-    $job = Job::find($id);
-
+Route::get('/jobs/{job}/edit', static function (Job $job) {
     return view('jobs.edit', [
         'job' => $job,
     ]);
 });
 
 // Update
-Route::patch('/jobs/{id}', static function ($id) {
+Route::patch('/jobs/{job}', static function (Job $job) {
     request()->validate([
         'title'  => ['required', 'min:3'],
         'salary' => ['required', 'numeric'],
     ]);
-
-    $job = Job::findOrFail($id);
 
     $job->update([
         'title'  => request('title'),
@@ -69,8 +63,7 @@ Route::patch('/jobs/{id}', static function ($id) {
 });
 
 // Destroy
-Route::delete('/jobs/{id}', static function ($id) {
-    $job = Job::findOrFail($id);
+Route::delete('/jobs/{job}', static function (Job $job) {
 
     $job->delete();
 
