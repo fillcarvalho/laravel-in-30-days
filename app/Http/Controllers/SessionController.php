@@ -29,7 +29,7 @@ class SessionController extends Controller
         return \redirect('/jobs');
     }
 
-    public function login()
+    public function create()
     {
         return view('login.login');
     }

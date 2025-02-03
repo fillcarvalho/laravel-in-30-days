@@ -25,5 +25,10 @@ class AppServiceProvider extends ServiceProvider
 
         // Setting it to use tailwind all the time.
         Paginator::useTailwind();
+
+        //        Gate::define('edit-job', static function(User $user,Job $job) {
+        //            return $job->employer->user->is( $user );
+        //        });
+
     }
 }
