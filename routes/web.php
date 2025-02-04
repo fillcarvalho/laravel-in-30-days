@@ -14,7 +14,7 @@ Route::view('/contact', 'contact');
 
 
 Route::controller(JobController::class)->group(function () {
-    Route::get('/jobs/create', 'create');
+    Route::get('/jobs/create', 'create')->middleware('auth');
     Route::get('/jobs', 'index');
     Route::post('/jobs', 'store')->middleware('auth');
     Route::get('/jobs/{job}', 'show');
@@ -22,7 +22,7 @@ Route::controller(JobController::class)->group(function () {
 
     Route::get('/jobs/{job}/edit', 'edit')
         ->middleware('auth')
-        ->can('edit-job', 'job');
+        ->can('edit', 'job');
 
     Route::patch('/jobs/{job}', 'update')
         ->middleware('auth')
@@ -30,7 +30,7 @@ Route::controller(JobController::class)->group(function () {
 
     Route::delete('/jobs/{job}', 'destroy')
         ->middleware('auth')
-        ->can('edit-job', 'job');
+        ->can('edit', 'job');
 });
 
 // If you want to apply this middlewhere only on index
