@@ -11,7 +11,6 @@ use Illuminate\Queue\SerializesModels;
 
 class JobPosted extends Mailable
 {
-
     use Queueable, SerializesModels;
 
     /**

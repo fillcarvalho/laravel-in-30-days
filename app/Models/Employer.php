@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employer extends Model
 {
-
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
 

@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Mail;
 
 class JobController extends Controller
 {
-
     public function index()
     {
         $Jobs = Job::with('employer')->latest()->paginate(5);
@@ -21,13 +20,13 @@ class JobController extends Controller
     public function store()
     {
         request()->validate([
-            'title'  => ['required', 'min:3'],
+            'title' => ['required', 'min:3'],
             'salary' => ['required', 'numeric'],
         ]);
 
         $job = Job::create([
-            'title'       => request('title'),
-            'salary'      => request('salary'),
+            'title' => request('title'),
+            'salary' => request('salary'),
             'employer_id' => 1,
             'user_id' => Auth::id(),
         ]);
@@ -63,12 +62,12 @@ class JobController extends Controller
     public function update(Job $job)
     {
         request()->validate([
-            'title'  => ['required', 'min:3'],
+            'title' => ['required', 'min:3'],
             'salary' => ['required', 'numeric'],
         ]);
 
         $job->update([
-            'title'  => request('title'),
+            'title' => request('title'),
             'salary' => request('salary'),
         ]);
 
@@ -81,7 +80,6 @@ class JobController extends Controller
         //        Auth::user()->can('edit-job', $job);
 
         //        Gate::authorize('edit-job', $job);
-
 
         return view('jobs.edit', [
             'job' => $job,

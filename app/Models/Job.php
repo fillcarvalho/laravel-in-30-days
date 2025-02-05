@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Job extends Model
 {
-
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
 
@@ -27,5 +26,4 @@ class Job extends Model
         return $this->belongsToMany(Tag::class,
             foreignPivotKey: 'job_listing_id');
     }
-
 }

@@ -8,12 +8,11 @@ use Illuminate\Validation\Rules\Password;
 
 class RegisteredUserController extends Controller
 {
-
     public function store()
     {
         $validatedAttributes = request()->validate([
-            'name'     => ['required', 'string', 'max:255'],
-            'email'    => [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => [
                 'required',
                 'string',
                 'email',
@@ -27,12 +26,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect("/jobs");
+        return redirect('/jobs');
     }
 
     public function create()
     {
         return view('auth.register');
     }
-
 }

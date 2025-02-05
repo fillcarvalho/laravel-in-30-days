@@ -125,8 +125,8 @@ return [
 
     'states' => [
         [
-            "name"   => "Acre",
-            "slug"   => "acre",
+            'name' => 'Acre',
+            'slug' => 'acre',
             'cities' => [
                 ['name' => 'Rio Branco', 'slug' => 'rio-branco'],
                 ['name' => 'Cruzeiro do Sul', 'slug' => 'cruzeiro-do-sul'],
@@ -142,8 +142,8 @@ return [
         ],
 
         [
-            "name"   => "Alagoas",
-            "slug"   => "alagoas",
+            'name' => 'Alagoas',
+            'slug' => 'alagoas',
             'cities' => [
                 ['name' => 'Maceió', 'slug' => 'maceio'],
                 ['name' => 'Arapiraca', 'slug' => 'arapiraca'],
@@ -171,8 +171,8 @@ return [
         ],
 
         [
-            "name"   => "Amazonas",
-            "slug"   => "amazonas",
+            'name' => 'Amazonas',
+            'slug' => 'amazonas',
             'cities' => [
                 ['name' => 'Manaus', 'slug' => 'manaus'],
                 ['name' => 'Parintins', 'slug' => 'parintins'],

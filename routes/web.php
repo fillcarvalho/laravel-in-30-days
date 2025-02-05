@@ -20,7 +20,6 @@ Route::get('/', static function () {
 });
 Route::view('/contact', 'contact');
 
-
 Route::controller(JobController::class)->group(function () {
     Route::get('/jobs/create', 'create')->middleware('auth');
     Route::get('/jobs', 'index');
@@ -42,20 +41,15 @@ Route::controller(JobController::class)->group(function () {
 });
 
 // If you want to apply this middlewhere only on index
-//Route::resource('jobs', JobController::class)->only(['index'])->middleware('auth');
+// Route::resource('jobs', JobController::class)->only(['index'])->middleware('auth');
 
 // If you want to apply this middlewhere except on index
-//Route::resource('jobs', JobController::class)->except(['index'])->middleware('auth');
-
+// Route::resource('jobs', JobController::class)->except(['index'])->middleware('auth');
 
 // Auth
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
-
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
-
-
-
