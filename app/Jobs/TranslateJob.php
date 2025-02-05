@@ -6,6 +6,8 @@ use App\Models\Job;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
+use function logger;
+
 class TranslateJob implements ShouldQueue
 {
     use Queueable;
@@ -21,6 +23,6 @@ class TranslateJob implements ShouldQueue
     public function handle(): void
     {
         // Do whatever you want to
-        \logger('Hello from the translatejob: '.$this->jobListing->title);
+        logger('Hello from the translatejob: '.$this->jobListing->title);
     }
 }

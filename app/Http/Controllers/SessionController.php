@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
+use function redirect;
+
 class SessionController extends Controller
 {
     /**
@@ -25,7 +27,7 @@ class SessionController extends Controller
 
         request()->session()->regenerate();
 
-        return \redirect('/jobs');
+        return redirect('/jobs');
     }
 
     public function create()
